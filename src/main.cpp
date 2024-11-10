@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Keyboard.h>
 
 const int pin_button1 = 0;
 const int pin_poti1 = 5;
@@ -15,8 +16,10 @@ void loop() {
     Serial.println("pressed");
     potiValue = analogRead(A5);
     Serial.println(potiValue);
-    delay(100);
+    Keyboard.press('n');
+    delay(10);
+    Keyboard.println("test");
+    Keyboard.releaseAll();
   }
-  
 }
 
