@@ -1,6 +1,8 @@
 #include <Arduino.h>
 
 const int pin_button1 = 0;
+const int pin_poti1 = 5;
+int potiValue;
 
 void setup() {
   Serial.begin(9600);
@@ -10,7 +12,9 @@ void setup() {
 void loop() {
   if (digitalRead(pin_button1))
   {
-    Serial.write("pressed");
+    Serial.println("pressed");
+    potiValue = analogRead(A5);
+    Serial.println(potiValue);
     delay(100);
   }
   
