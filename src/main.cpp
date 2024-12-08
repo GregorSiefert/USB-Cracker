@@ -1,9 +1,8 @@
 #include <Arduino.h>
 #include <Keyboard.h>
 
-const int pin_button1 = 0;
-const int pin_poti1 = 5;
-int potiValue;
+const int pin_button1 = 8;
+
 
 void setup() {
   Serial.begin(9600);
@@ -14,8 +13,7 @@ void loop() {
   if (digitalRead(pin_button1))
   {
     Serial.println("pressed");
-    potiValue = analogRead(A5);
-    Serial.println(potiValue);
+
     Keyboard.press('n');
     delay(10);
     Keyboard.println("test");
