@@ -112,6 +112,7 @@ void setup() {
 
 void loop() {
   Serial.print(7-(digitalRead(SW3)*1 + digitalRead(SW2)*2 + digitalRead(SW1)*4));
+  Serial.println(digitalRead(SW4));
   delay(1000);
 }
 
@@ -120,10 +121,23 @@ void loop() {
 // Crackname: Erklärung
 void win_0() { 
     Keyboard.write(KEY_LEFT_GUI);
-    Keyboard.println("editor");
+    delay(50);
+    Keyboard.print("editor");
+    delay(50);
+    Keyboard.write(KEY_RETURN);
+    delay(50);
 }
 
-void win_1(){}
+// Crackname: ALt+F4
+void win_1() { 
+    Keyboard.press(KEY_LEFT_ALT);
+    delay(50);
+    Keyboard.press(KEY_F4);
+    delay(50);
+    Keyboard.releaseAll();
+    delay(50);
+}
+
 void win_2(){}
 void win_3(){}
 void win_4(){}
