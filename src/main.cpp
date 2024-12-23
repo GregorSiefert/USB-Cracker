@@ -1,11 +1,14 @@
 #include <Arduino.h>
 #include <Keyboard.h>
+#include <Mouse.h>
 
 //Digitale Pins die an den 4-Schalter geschlossen sind
 const int SW1 = 8;
 const int SW2 = 9;
 const int SW3 = 10;
 const int SW4 = 11;
+
+int needed_delay = 80; //benötigter delay um keine Inputs zu überspringen
 
 //Definition der ausführbaren Funktionen
 void win_0();
@@ -31,12 +34,13 @@ void setup() {
   pinMode(SW4,INPUT);
   //Start des Programms
   Keyboard.begin();
+  Mouse.begin();
   int mode = 7-(digitalRead(SW3)*1 + digitalRead(SW2)*2 + digitalRead(SW1)*4);
   Serial.print(mode);
 
   if (mode == 7){while (1){}}   //Programmiermodus
 
-  if (digitalRead(SW4 == 0))  //Windows-Mode
+  if (digitalRead(SW4) == 0)  //Windows-Mode
   {
     switch (mode)
     {
@@ -120,22 +124,24 @@ void loop() {
 
 // Crackname: Erklärung
 void win_0() { 
+    delay(500);
     Keyboard.write(KEY_LEFT_GUI);
-    delay(50);
+    delay(needed_delay);
     Keyboard.print("editor");
-    delay(50);
+    delay(needed_delay);
     Keyboard.write(KEY_RETURN);
-    delay(50);
+    delay(needed_delay);
 }
 
 // Crackname: ALt+F4
 void win_1() { 
+    delay(500);
     Keyboard.press(KEY_LEFT_ALT);
-    delay(50);
+    delay(needed_delay);
     Keyboard.press(KEY_F4);
-    delay(50);
+    delay(needed_delay);
     Keyboard.releaseAll();
-    delay(50);
+    delay(needed_delay);
 }
 
 void win_2(){}
@@ -150,3 +156,4 @@ void ios_3(){}
 void ios_4(){}
 void ios_5(){}
 void ios_6(){}
+
