@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Keyboard.h>
+#include <Mouse.h>
 
 const int pin_button1 = 8;
 
@@ -12,12 +13,7 @@ void setup() {
 void loop() {
   if (digitalRead(pin_button1))
   {
-    Serial.println("pressed");
-
-    Keyboard.press('n');
-    delay(10);
-    Keyboard.println("test");
-    Keyboard.releaseAll();
+    Mouse.move(1,1);
+    delay(100);
   }
 }
-
