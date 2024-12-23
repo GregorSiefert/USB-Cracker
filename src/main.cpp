@@ -8,7 +8,7 @@ const int SW2 = 9;
 const int SW3 = 10;
 const int SW4 = 11;
 
-int needed_delay = 80; //benötigter delay um keine Inputs zu überspringen
+int needed_delay = 500; //benötigter delay um keine Inputs zu überspringen
 
 //Definition der ausführbaren Funktionen
 void win_0();
@@ -144,7 +144,76 @@ void win_1() {
     delay(needed_delay);
 }
 
-void win_2(){}
+// Crackname: ASCI-Animation
+void win_2() { 
+    delay(500);
+    Keyboard.write(KEY_LEFT_GUI);
+    delay(needed_delay);
+    Keyboard.print("editor");
+    delay(needed_delay);
+    Keyboard.write(KEY_RETURN);
+    delay(needed_delay);
+    Keyboard.press(KEY_LEFT_CTRL);
+    delay(needed_delay);
+    Keyboard.press('a');
+    delay(needed_delay);
+    Keyboard.releaseAll();
+    delay(needed_delay);
+    Keyboard.write(KEY_BACKSPACE);
+    delay(needed_delay);
+    while(1) {
+        delay(needed_delay);
+        Keyboard.println("                      ,_     _,");
+        delay(needed_delay);
+        Keyboard.println("            /)-_-(\\   |\\\\___//|");
+        delay(needed_delay);
+        Keyboard.println("             (o o)    |=^   ^=|");
+        delay(needed_delay);
+        Keyboard.println("     .-----__/\\o/     \\=._Y_.=/");
+        delay(needed_delay);
+        Keyboard.println("    /  __      /       )  `  (    ,");
+        delay(needed_delay);
+        Keyboard.println("\\__/\\ /  \\_\\ |/       /       \\  ((");
+        delay(needed_delay);
+        Keyboard.println("     \\\\     ||        |       |   ))");
+        delay(needed_delay);
+        Keyboard.println("     //     ||       /| |   | |\\_//");
+        delay(needed_delay);
+        Keyboard.press(KEY_LEFT_CTRL);
+        delay(needed_delay);
+        Keyboard.press('a');
+        delay(needed_delay);
+        Keyboard.releaseAll();
+        delay(needed_delay);
+        Keyboard.write(KEY_BACKSPACE);
+        delay(needed_delay);
+        Keyboard.println("            _     _   ,_     _,");
+        delay(needed_delay);
+        Keyboard.println("             )-_-(    |\\\\___//|");
+        delay(needed_delay);
+        Keyboard.println("             (^ ^)    |=o   o=|");
+        delay(needed_delay);
+        Keyboard.println("     .-----__/\\o/     \\=._Y_.=/");
+        delay(needed_delay);
+        Keyboard.println(" /  /  __      /       )  `  (  ,");
+        delay(needed_delay);
+        Keyboard.println(" \\_/\\ /  \\_\\ |/       /       \\ ))");
+        delay(needed_delay);
+        Keyboard.println("     \\\\     ||        |       |((");
+        delay(needed_delay);
+        Keyboard.println("     //     ||       /| |   | |\\\\\\");
+        delay(needed_delay);
+        Keyboard.press(KEY_LEFT_CTRL);
+        delay(needed_delay);
+        Keyboard.press('a');
+        delay(needed_delay);
+        Keyboard.releaseAll();
+        delay(needed_delay);
+        Keyboard.write(KEY_BACKSPACE);
+        delay(needed_delay);
+    }
+}
+
 void win_3(){}
 void win_4(){}
 void win_5(){}
