@@ -170,8 +170,9 @@ void win_2() {
         Keyboard.print("testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest");
         delay(needed_delay);
         Keyboard.write(KEY_RETURN);
-        /*
         delay(needed_delay);
+        /*
+        
         Keyboard.print("             (o o)    |=^   ^=|");
         delay(needed_delay);
         Keyboard.write(KEY_RETURN);
