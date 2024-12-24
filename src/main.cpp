@@ -186,9 +186,9 @@ void win_2() {
     while(1) {
       for (int i = 0; art1[i] != '\0'; i++) {
         if (art1[i] == '\n') {
-          Keyboard.write(KEY_RETURN); // Send a return key for newline
+          Keyboard.write(KEY_RETURN);
         } else {
-          Keyboard.write(art1[i]); // Write the character
+          Keyboard.write(art1[i]);
         }
         delay(20);
       }
@@ -196,9 +196,9 @@ void win_2() {
       delay(needed_delay);
       for (int i = 0; art2[i] != '\0'; i++) {
         if (art2[i] == '\n') {
-          Keyboard.write(KEY_RETURN); // Send a return key for newline
+          Keyboard.write(KEY_RETURN);
         } else {
-          Keyboard.write(art2[i]); // Write the character
+          Keyboard.write(art2[i]);
         }
         delay(20);
       }
@@ -207,9 +207,32 @@ void win_2() {
     }
 }
 
-void win_3(){}
+// Crackname: lock
+void win_3() { 
+    delay(500);
+    Keyboard.press(KEY_LEFT_CTRL);
+    delay(needed_delay);
+    Keyboard.press(KEY_LEFT_ALT);
+    delay(needed_delay);
+    Keyboard.press(KEY_DELETE);
+    delay(needed_delay);
+    Keyboard.releaseAll();
+    delay(needed_delay);
+    Keyboard.write(KEY_RETURN);
+    delay(needed_delay);
+}
+
 void win_4(){}
-void win_5(){}
+
+// Mouse Drift
+void win_5(){
+  while (1)
+  {
+    Mouse.move(1,1);
+    delay(100);
+  }
+  
+}
 void win_6(){}
 void ios_0(){}
 void ios_1(){}
